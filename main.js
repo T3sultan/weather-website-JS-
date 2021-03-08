@@ -15,10 +15,10 @@ class Weather {
             sys_data: response.sys
         }
     }
-    setLocation(city, country) {
-        this.city = city;
-        this.country = country;
-    }
+    // setLocation(city, country) {
+    //     this.city = city;
+    //     this.country = country;
+    // }
 
 }
 //instantiate weathe class
@@ -31,11 +31,16 @@ class UI {
         this.pressure = document.getElementById('pressure');
         this.humidity = document.getElementById('humidity');
     }
-    paint({ main_data:{temp,pressure,humidity}, overall_data:{main}}) {
+    paint({ main_data:{temp,pressure,humidity}, overall_data:{main,icon}}) {
+        const iconUrl = UI.generateIcon(icon);
+        this.icon.setAttribute('src',iconUrl)
         this.feels.textContent =main;
         this.temp.textContent = `Temperature(cel) ${temp}`;
         this.pressure.textContent =`ressure(hpa) ${pressure}`;
         this.humidity.textContent = `Humidity(%) ${humidity}`;
+    }
+    static generateIcon(icon){
+        return  "http://openweathermap.org/img/w/" + icon + ".png";
     }
 
 }
