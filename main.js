@@ -21,9 +21,29 @@ class Weather {
     }
 
 }
-const weather = new Weather('India', 'IND');
-
-weather.getWeather().then(data => console.log(data));
+//instantiate weathe class
+const weather = new Weather('Rongpur', 'BD');
 class UI {
+    constructor() {
+        this.icon = document.getElementById('w-icon');
+        this.feels = document.getElementById('w-feels');
+        this.temp = document.getElementById('temp');
+        this.pressure = document.getElementById('pressure');
+        this.humidity = document.getElementById('humidity');
+    }
+    paint({ main_data:{temp,pressure,humidity}, overall_data:{main}}) {
+        this.feels.textContent =main;
+        this.temp.textContent = `Temperature(cel) ${temp}`;
+        this.pressure.textContent =`ressure(hpa) ${pressure}`;
+        this.humidity.textContent = `Humidity(%) ${humidity}`;
+    }
 
 }
+
+const ui = new UI('London', 'UK');
+
+weather.getWeather().then(data => {
+    console.log(data);
+    ui.paint(data)
+})
+
