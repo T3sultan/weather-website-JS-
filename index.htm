@@ -14,8 +14,7 @@
         <div class="jumbotron">
             <h1 class="display-4">Wellcome to Weather Application</h1>
             <p>Now you can search weather of your city</p>
-          
-            <form>
+            <form id="w-form">
                 <div class="form-group">
                     <label for="city">city</label>
                     <input type="city" class="form-control" id="city" placeholder="Enter City...">
@@ -27,7 +26,7 @@
                     <input type="country" class="form-control" id="country" placeholder="Enter Country...">
                     <small class="form-text">Any country chose from the country list</small>
                 </div>
-                <button class="btn-btn-pramiry">Submit</button>
+                <button class="btn-btn-pramiry">submit</button>
 
             </form>
 
@@ -37,17 +36,17 @@
             <!--jumbotron-->
             <div class="col-md-6 mx-auto">
                 <div class="card">
-                    <div class="card-header text-center" id="w-city"> London
+                    <div class="card-header text-center" id="w-city"> 
 
                         <ul class="list-group">
                             <li>
                                 <img id="w-icon"></img>
-                                <span id="w-feels">Cloudy</span>
+                                <span id="w-feels"></span>
                                 <p></p>
                             </li>
-                            <li class="list-group-item" id="temp">Temperature(cel):12</li>
-                            <li class="list-group-item" id="pressure">Pressure(hpa) 45345</li>
-                            <li class="list-grorp-item" id="humidity">Humidity(%) 76</li>
+                            <li class="list-group-item" id="temp"></li>
+                            <li class="list-group-item" id="pressure"></li>
+                            <li class="list-grorp-item" id="humidity"></li>
                         </ul>
                     </div>
                 </div>
